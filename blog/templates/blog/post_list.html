@@ -9,16 +9,15 @@
     <header>
         <h1><a href="/">Mon Premier Django</a></h1>
     </header>
+   <div>
+    
+    {% for post in posts %}
     <article>
-        <time datetime=""> publication : 17.08.2026, 16:38</time>
-        <h2><a href="">Mon premier article</a></h2>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus harum sequi deserunt tenetur officia inventore fuga ducimus eligendi non soluta, voluptate deleniti molestiae unde reprehenderit ab possimus repudiandae labore excepturi.</p>
+        <time> publié le :{{ post.published_date }}</time>
+        <h2> <a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </article>
-
-    <article>
-        <time datetime=""> publication : 17.08.2026, 16:38</time>
-        <h2><a href="">Mon second article</a></h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt labore magni accusamus adipisci earum rem maiores dignissimos vel placeat ad, pariatur quae officiis, velit molestias asperiores tenetur mollitia. Rem, enim?</p>
-    </article>
+    {%  endfor %}
+   </div>
 </body>
 </html>
